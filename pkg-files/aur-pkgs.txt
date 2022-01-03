@@ -1,0 +1,2 @@
+github-desktop-bin
+visual-studio-code-bin
