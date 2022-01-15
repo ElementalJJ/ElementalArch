@@ -1,4 +1,4 @@
-source setup.conf
+source ./setup.conf
 
 # Enable parallel downloading
 sed -i 's/^#Para/Para/' /etc/pacman.conf

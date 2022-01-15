@@ -2,13 +2,22 @@
 A shell script for configuring Arch Linux beyond the default installation.
 
 ## Installation
-After executing ```arch-chroot``` into the Arch system, ensure ```git``` and ```reflector``` are installed — then, clone this repository and run the ```elementalarch.sh``` shell script to configure your system:
+After executing ```arch-chroot``` into the Arch system, ensure ```git``` and ```reflector``` are installed — then, clone this repository and run the ```./elementalarch.sh``` shell script to configure your system:
 
-```fish
+```bash
 pacman -S --noconfirm --needed git reflector
 git clone https://github.com/ElementalJJ/ElementalArch.git
 cd ElementalArch
 ./elementalarch.sh
+```
+
+Reboot and enter into the new system. Change directory into ```/home/ElementalArch```. Then run ```./post.sh``` to finish configuration of the system.
+
+## Fish Setup
+Run the following commands after ```./post.sh``` to configure ```fish```:
+```fish
+omf install archlinux
+fish_update_completions
 ```
 
 ## Base System

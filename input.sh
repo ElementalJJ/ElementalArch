@@ -1,13 +1,13 @@
-# Remove existing setup.conf
+# Remove existing ./setup.conf
 rm -rf ./setup.conf &>/dev/null
 
 # # User input
 # echo "Please enter a username:"
 # read username
-# echo "username=$username" >> setup.conf
+# echo "username=$username" >> ./setup.conf
 
 username () {
-if ! setup.conf; then
+if ! ./setup.conf; then
 	# Loop through user input until the user gives a valid username
 	while true
 	do
@@ -28,7 +28,7 @@ fi
 
 # echo "Please enter a password for $username:"
 # read -s password
-# echo "password=$password" >> setup.conf
+# echo "password=$password" >> ./setup.conf
 
 password () {
 
@@ -63,9 +63,9 @@ echo -ne "\nAUR helper choice: $input_helper"
 read input_helper
 
 case $input_helper in
-0) echo "aur_helper=paru" >> setup.conf;;
-1) echo "aur_helper=yay" >> setup.conf;;
-*) echo "aur_helper=paru" >> setup.conf;;
+0) echo "aur_helper=paru" >> ./setup.conf;;
+1) echo "aur_helper=yay" >> ./setup.conf;;
+*) echo "aur_helper=paru" >> ./setup.conf;;
 esac
 }
 
