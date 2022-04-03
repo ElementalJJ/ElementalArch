@@ -26,4 +26,4 @@ cp -R . /home/$username/$SCRIPTHOME
 chmod +rx /home/$username/$SCRIPTHOME/*
 
 # Update sudo/wheel group priviledges for AUR helper installation
-sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
