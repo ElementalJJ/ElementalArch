@@ -2,8 +2,10 @@ firefox
 kitty
 micro
 snapper
+snap-pac
 fish
 pkgfile
 ttf-dejavu
 powerline-fonts
 inetutils
+neofetch

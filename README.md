@@ -11,10 +11,10 @@ cd ElementalArch
 ./elementalarch.sh
 ```
 
-Reboot and enter into the new system. Change directory into ```/home/ElementalArch```. Then run ```./post.sh``` to finish configuration of the system.
+Exit ```arch-chroot```, reboot, and enter into the new system. Open ```kitty```, run the ```fish``` command, and change directory into ```/home/ElementalArch```. Then, run ```./post.sh``` to finish configuration of the system.
 
 ## Fish Setup
-Run the following commands after ```./post.sh``` to configure ```fish```:
+Run the following commands after completing ```./post.sh``` to configure ```fish```:
 ```fish
 omf install archlinux
 fish_update_completions
