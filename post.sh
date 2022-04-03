@@ -30,6 +30,7 @@ cp ./dotfiles/kitty/theme.conf ~/.config/kitty/theme.conf
 
 # Set fish as default shell
 echo "exec fish" >> ~/.bashrc
+sed -i 's/# Commands to run in interactive sessions can go here/neofetch/' ~/.config/fish/config.fish
 
 # Install and configure Oh-My-Fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish

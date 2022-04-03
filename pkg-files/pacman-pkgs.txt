@@ -7,3 +7,4 @@ pkgfile
 ttf-dejavu
 powerline-fonts
 inetutils
+neofetch
