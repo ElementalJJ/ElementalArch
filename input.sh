@@ -69,7 +69,7 @@ snapper_setup () {
 	1.) Default Snapper Configuration and Snap-Pac
 	"
 
-	echo -ne "\nSnapper Choice: $snapper_choice"
+	echo -ne "\nSnapper choice: $snapper_choice"
 	read snapper_choice
 
 	case $snapper_choice in
