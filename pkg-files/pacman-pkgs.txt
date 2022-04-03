@@ -2,6 +2,7 @@ firefox
 kitty
 micro
 snapper
+snap-pac
 fish
 pkgfile
 ttf-dejavu

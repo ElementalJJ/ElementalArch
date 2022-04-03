@@ -1,25 +1,28 @@
 source ./setup.conf
 
 # Snapper
-sudo umount /.snapshots/
-sudo rm -rf /.snapshots/
-sudo snapper -c root create-config /
-sudo sed -i 's/^ALLOW_USERS=""/ALLOW_USERS="$username"/' /etc/snapper/configs/root
-sudo sed -i 's/^TIMELINE_LIMIT_YEARLY="10"/TIMELINE_LIMIT_YEARLY="0"/' /etc/snapper/configs/root
-sudo sed -i 's/^TIMELINE_LIMIT_MONTHLY="10"/TIMELINE_LIMIT_MONTHLY="4"/' /etc/snapper/configs/root
-sudo sed -i 's/^TIMELINE_LIMIT_WEEKLY="0"/TIMELINE_LIMIT_WEEKLY="7"/' /etc/snapper/configs/root
-sudo sed -i 's/^TIMELINE_LIMIT_DAILY="10"/TIMELINE_LIMIT_DAILY="8"/' /etc/snapper/configs/root
-sudo sed -i 's/^TIMELINE_LIMIT_HOURLY="10"/TIMELINE_LIMIT_HOURLY="5"/' /etc/snapper/configs/root
+if $snapper_choice
+    then
+        sudo umount /.snapshots/
+        sudo rm -rf /.snapshots/
+        sudo snapper -c root create-config /
+        sudo sed -i 's/^ALLOW_USERS=""/ALLOW_USERS="$username"/' /etc/snapper/configs/root
+        sudo sed -i 's/^TIMELINE_LIMIT_YEARLY="10"/TIMELINE_LIMIT_YEARLY="0"/' /etc/snapper/configs/root
+        sudo sed -i 's/^TIMELINE_LIMIT_MONTHLY="10"/TIMELINE_LIMIT_MONTHLY="4"/' /etc/snapper/configs/root
+        sudo sed -i 's/^TIMELINE_LIMIT_WEEKLY="0"/TIMELINE_LIMIT_WEEKLY="7"/' /etc/snapper/configs/root
+        sudo sed -i 's/^TIMELINE_LIMIT_DAILY="10"/TIMELINE_LIMIT_DAILY="8"/' /etc/snapper/configs/root
+        sudo sed -i 's/^TIMELINE_LIMIT_HOURLY="10"/TIMELINE_LIMIT_HOURLY="5"/' /etc/snapper/configs/root
 
-sudo chmod a+rx /.snapshots/
+        sudo chmod a+rx /.snapshots/
 
-sudo systemctl start snapper-timeline.timer
-sudo systemctl enable snapper-timeline.timer
+        sudo systemctl start snapper-timeline.timer
+        sudo systemctl enable snapper-timeline.timer
 
-sudo systemctl start snapper-cleanup.timer
-sudo systemctl enable snapper-cleanup.timer
+        sudo systemctl start snapper-cleanup.timer
+        sudo systemctl enable snapper-cleanup.timer
 
-sudo snapper -c root create -c timeline --description AfterInstall
+        sudo snapper -c root create -c timeline --description AfterInstall
+fi
 
 # Remove source files from root directory
 sudo rm -rf /$SCRIPTHOME/
