@@ -47,9 +47,9 @@ password () {
 # AUR Helper
 aur_software () {
 	echo -ne "
-	 Please enter your choice of AUR helper:
-	 0.)      Paru (default)
-	 1.)      Yay
+	Please enter your choice of AUR helper:
+	0.)      Paru (default)
+	1.)      Yay
 	"
 
 	echo -ne "\nAUR helper choice: $input_helper"
@@ -65,8 +65,8 @@ aur_software () {
 # Snapper Configuration
 snapper_setup () {
 	echo -ne "
-	 0.) Snap-Pac (Default)
-	 1.) Default Snapper Configuration and Snap-Pac
+	0.) Snap-Pac (Default)
+	1.) Default Snapper Configuration and Snap-Pac
 	"
 
 	echo -ne "\nSnapper Choice: $snapper_choice"
